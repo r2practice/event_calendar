@@ -168,7 +168,8 @@ module EventCalendar
         first_day_of_week.upto(first_day_of_week+6) do |day|
           today_class = (day == Date.today) ? "ec-today-bg" : ""
           other_month_class = (day < first) || (day > last) ? 'ec-other-month-bg' : ''
-          cal << %(<td class="ec-day-bg #{today_class} #{other_month_class}">&nbsp;</td>)
+          cell_body = options[:link_to_day_action].present? ? day_link("&nbsp;", day, options[:link_to_day_action]) : '&nbsp;'
+          cal << %(<td class="ec-day-bg #{today_class} #{other_month_class}">#{cell_body}</td>)
         end
         cal << %(</tr></tbody></table>)
 
