@@ -170,7 +170,7 @@ module EventCalendar
           today_class = (day == Date.today) ? "ec-today-bg" : ""
           other_month_class = (day < first) || (day > last) ? 'ec-other-month-bg' : ''
           if options[:link_to_day_action].present?
-            link_body = %q{<div class="ec-day-link">&nbsp;<div>}.html_safe
+            link_body = %q{oscar meyer weiner}.html_safe
             cell_body = day_link(link_body,day,options[:link_to_day_action])
           else
             cell_body = "&nbsp"
